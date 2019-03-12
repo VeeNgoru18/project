@@ -2,7 +2,15 @@
   "name": "bookshop",
   "version": "0.1.0",
   "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
   "dependencies": {
-    "electron": "^4.0.5"
+    "bootstrap": "^4.3.1",
+    "electron": "^4.0.5",
+    "electron-reload": "^1.4.0",
+    "mariadb": "^2.0.3",
+    "mercury": "^14.1.0",
+    "mysql": "^2.16.0"
   }
 }

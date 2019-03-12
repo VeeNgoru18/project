@@ -26,8 +26,3 @@ class Window extends BrowserWindow
   }
 }
 module.exports = Window
-{
-  label:'Clear Items',
-  click(){
-    mainWindow.webContents.send('item:clear');
-  }
