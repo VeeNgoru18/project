@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,81 +13,45 @@
   <link href="mdbootstrap-jquery-pro/css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="mdbootstrap-jquery-pro/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
 </head>
 
 <body class="black-skin">
   <!--Main Navigation-->
 <header>
   <!--Navbar-->
-  <nav class="mb-1 navbar navbar-expand-lg navbar-dark primary-color">
-    <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">NGOWAN
-    <img src="/polar/img/icons/" width="90" height="30" class="d-inline-block align-top"
-  alt="">
-</a>
-</nav>
+
 </header>
 <!--Main Navigation-->
 
 <!--Main layout-->
 <main>
-  <!--Main container-->
-  <div class="container">
+ <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link " id="sales-tab" data-toggle="tab" href="#sales" role="tab" aria-controls="sales"
+      aria-selected="true">Sales</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" id="books-tab" data-toggle="tab" href="#books" role="tab" aria-controls="books"
+      aria-selected="false">Books</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="users-tab" data-toggle="tab" href="#users" role="tab" aria-controls="users"
+      aria-selected="false">Users</a>
+  </li>
 
-      <!--Grid row-->
-      <div class="row">
-
-          <!--Grid column-->
-          <div class="col-md-7">
-
-
-
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-md-5">
-
-
-
-          </div>
-          <!--Grid column-->
-
-      </div>
-      <!--Grid row-->
-
-      <!--Grid row-->
-      <div class="row">
-
-          <!--Grid column-->
-          <div class="col-lg-4 col-md-12">
-
-
-
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-4 col-md-6">
-
-
-
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-4 col-md-6">
-
-
-
-          </div>
-          <!--Grid column-->
-
-      </div>
-      <!--Grid row-->
-
-  </div>
-  <!--Main container-->
+  <li class="nav-item">
+    <a class="nav-link" id="reports-tab" data-toggle="tab" href="#reports" role="tab" aria-controls="reports"
+      aria-selected="false">Reports</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade " id="sales" role="tabpanel" aria-labelledby="sales-tab"></div>
+  <div class="tab-pane fade show active" id="books" role="tabpanel" aria-labelledby="books-tab">F</div>
+  <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab"></div>
+  <div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="reports-tab"></div>
+</div>
 </main>
 <!--Main layout-->
 
@@ -102,14 +65,25 @@
 <!-- /Start your project here-->
 
   <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="mdbootstrap-jquery-pro/js/jquery-3.3.1.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="mdbootstrap-jquery-pro/js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="mdbootstrap-jquery-pro/js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="mdbootstrap-jquery-pro/js/mdb.js"></script>
+ <!-- JQuery -->
+ <!-- <script src="./src/"></script> -->
+ <script>window.$ = window.jQuery = require('/home/vee/Desktop/project/electron-quick-start/mdbootstrap-jquery-pro/js/jquery-3.3.1.min.js');</script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
+<script src="screens/books/books.js"></script>
+<script type="text/javascript">
+  $("#sales").load('screens/sales/sales.html')
+  $("#books").load('screens/books/books.html');
+  $("#users").load('screens/users/users.html');
+  $("#reports").load('screens/reports/reports.html');
+</script>
 </body>
 
 </html>

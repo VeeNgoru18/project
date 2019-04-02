@@ -16,6 +16,7 @@ let addWindow;
 app.on('ready', function(){
   // Create new window
   mainWindow = new BrowserWindow({});
+  mainWindow.webContents.openDevTools()
   mainWindow.maximize()
   // Load html in window
   mainWindow.loadURL(url.format({
@@ -66,18 +67,7 @@ const mainMenuTemplate =  [
   {
     label: 'File',
     submenu:[
-      //{
-      //  label:'Add Item',
-        //click(){
-          //createAddWindow();
-        //}
-      //},
-      //{
-        //label:'Clear Items',
-        //click(){
-          //mainWindow.webContents.send('item:clear');
-        //}
-      //},
+      
       {
         label: 'Quit',
         accelerator:process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
@@ -94,21 +84,4 @@ if(process.platform == 'darwin'){
   mainMenuTemplate.unshift({});
 }
 
-// Add developer tools option if in dev
-//if(process.env.NODE_ENV !== 'production'){
-  //mainMenuTemplate.push({
-    //label: 'Developer Tools',
-    //submenu:[
-      //{
-        //role: 'reload'
-      //},
-      //{
-        //label: 'Toggle DevTools',
-        //accelerator:process.platform == 'darwin' ? 'Command+I' : 'Ctrl+I',
-        //click(item, focusedWindow){
-          //focusedWindow.toggleDevTools();
-        //}
-      //}
-    //]
-  //});
-//}
+
