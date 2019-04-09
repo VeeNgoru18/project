@@ -3,16 +3,19 @@
   "version": "0.1.0",
   "main": "main.js",
   "scripts": {
-    "start": "electron main.js"
+    "start": "nodemon --watch * --exec 'electron main.js'"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
     "electron": "^4.0.5",
+    "electron-prebuilt": "^1.4.13",
     "electron-reload": "^1.4.0",
+    "express": "^4.16.4",
     "jquery.terminal": "^2.2.0",
     "mariadb": "^2.0.3",
     "mercury": "^14.1.0",
     "mysql": "^2.16.0",
+    "nodemon": "^1.18.11",
     "sweetalert2": "^8.8.0"
   }
 }

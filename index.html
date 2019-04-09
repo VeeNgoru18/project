@@ -55,7 +55,49 @@
 </main>
 <!--Main layout-->
 
-<!--Footer-->
+<!--Login modal start-->
+<div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-center" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Welcome to NGOWAN</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Default form login -->
+        <form class="text-center border border-light p-5" method="POST" action="" >
+
+          <p class="h4 mb-4">login</p>
+
+          <!-- Email -->
+          <div class="form-group">
+            <input type="text" id="idNO" class="form-control mb-4" placeholder="iD Number" required />
+          </div>
+
+          <div class="form-group">
+            <input type="password" id="password" class="form-control mb-4" placeholder="Password" required />
+          </div>
+
+          <!-- <div class="form-group">
+
+              <button class="btn btn-info btn-secondary btn-fluid">Login</button>
+          </div> -->
+
+      </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="login()" class="btn btn-secondary" >Login</button>
+        <!-- <button type="button" class="btn btn-primary" onclick="AddCategory()">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End of login modal -->
 <footer>
 
 </footer>
@@ -77,13 +119,22 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
-<script src="screens/books/books.js"></script>
+
+</script>
+
 <script type="text/javascript">
   $("#sales").load('screens/sales/sales.html')
   $("#books").load('screens/books/books.html');
   $("#users").load('screens/users/users.html');
   $("#reports").load('screens/reports/reports.html');
+
+  // open login  modal
+  $("#loginmodal").modal('show')
 </script>
+<script src="ngowan.js"></script>
 </body>
 
 </html>
+
+
+<!-- login modal -->

@@ -1,8 +1,7 @@
 // todo - escape quotes
-
 const Swal = require('sweetalert2');
-
 var mysql      = require('mysql');
+
 var categories = [];
 var connection = mysql.createConnection({
   host     : 'localhost',
@@ -11,9 +10,12 @@ var connection = mysql.createConnection({
   database : 'project'
 });
 
+// functions that run at startup
 $(function() {
   fetchCategories();
 })
+
+// -- Books screen--
 
 function fetchCategories() {
   var fetchCategoriesQuery = "select * from category";
@@ -23,7 +25,7 @@ function fetchCategories() {
     categories = results;
     $("#categoryParent").html('<option value="0" selected>-no parent-</option>')
     for (var result of results){
-      $("#categoryParent").append($('<option>', { //used to insert specified content 
+      $("#categoryParent").append($('<option>', { //used to insert specified content
         value: result.categoryID,
         text: result.categoryName
       }))
@@ -59,5 +61,29 @@ function AddCategory(){
     });
 
   }
+
+}
+
+
+// -- Authentication ---
+function login() {
+  var idNO = $('#idNO').val();
+  var password = $('#password').val();
+
+var query = `select * from users where idNO = '${idNO}' and password = '${password}' and active= '1'`
+connection.query(query, function (error, results, fields) {
+  if (error) throw error;
+  if (results.length > 0){
+    sessionStorage.set('user', results[0])
+
+  }else {
+    Swal.fire({
+      title: 'Error!',
+      text: 'Wrong Credentials',
+      type: 'error',
+      confirmButtonText: 'OK'
+    })
+  }
+})
 
 }

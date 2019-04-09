@@ -67,7 +67,7 @@ const mainMenuTemplate =  [
   {
     label: 'File',
     submenu:[
-      
+
       {
         label: 'Quit',
         accelerator:process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
@@ -83,5 +83,3 @@ const mainMenuTemplate =  [
 if(process.platform == 'darwin'){
   mainMenuTemplate.unshift({});
 }
-
-
