@@ -53,6 +53,7 @@ function createAddWindow(){
   });
 }
 
+
 // Catch item:add
 ipcMain.on('item:add', function(e, item){
   mainWindow.webContents.send('item:add', item);

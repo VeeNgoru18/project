@@ -1,3 +1,51 @@
-<h1>
-  I am used
-</h1>
+<<div class="col-sm-2" id="menu"">
+  <button class="btn btn-info btn-fluid" data-toggle="modal" data-target="#NewUserModal">New User</button>
+
+
+</div>
+<div class="modal fade" id="NewUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-center" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add new User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+            <div class="modal-body">
+            <!--  Default form login -->
+              <form class="text-center border border-light p-5" method="POST" action="" >
+
+                <p class="h4 mb-4">Add User</p>
+
+                <!-- Email -->
+                <div class="form-group">
+                  <input type="text" id="idNO" class="form-control mb-4" placeholder="iD Number" required />
+                </div>
+
+                <div class="form-group">
+                  <input type="password" id="password" class="form-control mb-4" placeholder="Password" required />
+                </div>
+                <div class="form-group">
+                  <select required class="browser-default custom-select" id="userType">
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
+                  </select>
+
+                </div>
+
+              
+
+                <!-- <div class="form-group">
+
+                    <button class="btn btn-info btn-secondary btn-fluid">Login</button>
+                </div> -->
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" onclick="login()" class="btn btn-secondary" >Add User</button>
+            <!-- <button type="button" class="btn btn-primary" onclick="AddCategory()">Save changes</button> -->
+          </div>

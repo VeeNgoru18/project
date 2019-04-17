@@ -1,8 +1,7 @@
 // todo - escape quotes
-
 const Swal = require('sweetalert2');
-
 var mysql      = require('mysql');
+
 var categories = [];
 var connection = mysql.createConnection({
   host     : 'localhost',
@@ -23,7 +22,7 @@ function fetchCategories() {
     categories = results;
     $("#categoryParent").html('<option value="0" selected>-no parent-</option>')
     for (var result of results){
-      $("#categoryParent").append($('<option>', { //used to insert specified content 
+      $("#categoryParent").append($('<option>', { //used to insert specified content
         value: result.categoryID,
         text: result.categoryName
       }))

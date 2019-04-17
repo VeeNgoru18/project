@@ -13,7 +13,7 @@
   <link href="mdbootstrap-jquery-pro/css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="mdbootstrap-jquery-pro/css/style.css" rel="stylesheet">
-
+  <link href="/home/vee/Desktop/project/electron-quick-start/src/selectize.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
 </head>
 
@@ -29,11 +29,11 @@
 <main>
  <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link " id="sales-tab" data-toggle="tab" href="#sales" role="tab" aria-controls="sales"
+    <a class="nav-link active" id="sales-tab" data-toggle="tab" href="#sales" role="tab" aria-controls="sales"
       aria-selected="true">Sales</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" id="books-tab" data-toggle="tab" href="#books" role="tab" aria-controls="books"
+    <a class="nav-link " id="books-tab" data-toggle="tab" href="#books" role="tab" aria-controls="books"
       aria-selected="false">Books</a>
   </li>
   <li class="nav-item">
@@ -47,8 +47,8 @@
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade " id="sales" role="tabpanel" aria-labelledby="sales-tab"></div>
-  <div class="tab-pane fade show active" id="books" role="tabpanel" aria-labelledby="books-tab">F</div>
+  <div class="tab-pane fade show active" id="sales" role="tabpanel" aria-labelledby="sales-tab"></div>
+  <div class="tab-pane fade " id="books" role="tabpanel" aria-labelledby="books-tab">F</div>
   <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab"></div>
   <div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="reports-tab"></div>
 </div>
@@ -62,12 +62,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Welcome to NGOWAN</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+
       </div>
       <div class="modal-body">
-        <!-- Default form login -->
+      <!--  Default form login -->
         <form class="text-center border border-light p-5" method="POST" action="" >
 
           <p class="h4 mb-4">login</p>
@@ -119,7 +117,7 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
-
+<script src="/home/vee/Desktop/project/electron-quick-start/src/selectize.js"></script>
 </script>
 
 <script type="text/javascript">
@@ -129,9 +127,19 @@
   $("#reports").load('screens/reports/reports.html');
 
   // open login  modal
-  $("#loginmodal").modal('show')
+  $(document).ready(function(){
+    // $('select').selectize();
+    // $("#loginmodal").modal({
+    //   show:true,
+    //   backdrop: 'static',
+    // 	keyboard: false
+    // });
+});
+
+
 </script>
 <script src="ngowan.js"></script>
+
 </body>
 
 </html>

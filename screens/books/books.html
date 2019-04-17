@@ -2,31 +2,25 @@
   <div class="col-sm-2" id="menu">
     <button class="btn btn-info btn-fluid" data-toggle="modal" data-target="#NewBookModal">New Book</button>
     <button class="btn btn-info btn-fluid" data-toggle="modal" data-target="#NewCategoryModal">New Category</button>
+    <button class="btn btn-danger" onclick="downloadBooks()">Download List of Books</button>
   </div>
   <div class="col-sm-10">
     <h1>Books</h1>
     <hr>
-    <table class="table table-bordered">
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Category</th>
-        <th>Quantity</th>
-        <th>Publisher</th>
-        <th>Price (KES)</th>
-        <th>Actions</th>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>Primary CRE</td>
-        <td>Primary</td>
-        <td>10</td>
-        <td>KLB</td>
-        <td>400</td>
-        <td>
-          <button class="btn btn-sm btn-success btn-fluid">Edit</button>
-        </td>
-      </tr>
+    <table class="table table-bordered" id="booksTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Publisher</th>
+          <th>Price (KES)</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="bookList">
+      </tbody>
     </table>
   </div>
 </div>
@@ -48,7 +42,13 @@
         <form class="text-center border border-light p-5">
 
           <p class="h4 mb-4">Add a new Book in</p>
+          <input type="text" id="bookName" class="form-control mb-4" placeholder="Name" required />
+          <input type="text" id="price" class="form-control mb-4" placeholder="Price" required />
+          <input type="text" id="publisher" class="form-control mb-4" placeholder="Publisher" required />
+          <input type="text" id="quantity" class="form-control mb-4" placeholder="Quantity" required />
 
+          <select id="bookCategory" required class="browser-default custom-select">
+          </select>
 
 
       </form>
@@ -56,7 +56,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" onclick="AddBook()">Save changes</button>
       </div>
     </div>
   </div>
@@ -81,7 +81,7 @@
 
           <p class="h4 mb-4">Add a new Category</p>
 
-          <!-- Email -->
+
           <input type="text" id="categoryName" class="form-control mb-4" placeholder="Category Name" required />
 
           <select id="categoryParent" required class="browser-default custom-select">
@@ -99,3 +99,38 @@
     </div>
   </div>
 </div>
+  <!-- edit book modal -->
+  <div class="modal fade" id="EditBookModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-center" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add new Book</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Default form login -->
+          <form class="text-center border border-light p-5">
+
+            <p class="h4 mb-4">Add a new Book in</p>
+            <input type="text" id="EditBookName" class="form-control mb-4" placeholder="Name" required />
+            <input type="text" id="EditPrice" class="form-control mb-4" placeholder="Price" required />
+            <input type="text" id="EditPublisher" class="form-control mb-4" placeholder="Publisher" required />
+            <input type="text" id="EditQuantity" class="form-control mb-4" placeholder="Quantity" required />
+
+            <select id="EditBookCategory" required class="browser-default custom-select">
+            </select>
+
+
+        </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="SaveChangesEditBook">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
