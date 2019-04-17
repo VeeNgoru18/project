@@ -88,7 +88,7 @@ function login() {
   var idNO = $('#idNO').val();
   var password = $('#password').val();
 
-var query = `select * from users where idNO = '${idNO}' and password = '${md5(password)}' and active= '1'`
+var query = `select * from users where idNO = '${idNO}' and name = '${name}' and password = '${md5(password)}' and active= '1'`
 connection.query(query, function (error, results, fields) {
   if (error) throw error;
   if (results.length > 0){
