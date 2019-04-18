@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,135 +14,142 @@
   <link href="mdbootstrap-jquery-pro/css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="mdbootstrap-jquery-pro/css/style.css" rel="stylesheet">
-  <link href="/home/vee/Desktop/project/electron-quick-start/src/selectize.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
 </head>
 
 <body class="black-skin">
   <!--Main Navigation-->
-<header>
-  <!--Navbar-->
+  <header>
+    <!--Navbar-->
 
-</header>
-<!--Main Navigation-->
+  </header>
+  <!--Main Navigation-->
 
-<!--Main layout-->
-<main>
- <ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="sales-tab" data-toggle="tab" href="#sales" role="tab" aria-controls="sales"
-      aria-selected="true">Sales</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link " id="books-tab" data-toggle="tab" href="#books" role="tab" aria-controls="books"
-      aria-selected="false">Books</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="users-tab" data-toggle="tab" href="#users" role="tab" aria-controls="users"
-      aria-selected="false">Users</a>
-  </li>
+  <!--Main layout-->
+  <main>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="sales-tab" data-toggle="tab" href="#sales" role="tab" aria-controls="sales"
+          aria-selected="true">Sales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="books-tab" data-toggle="tab" href="#books" role="tab" aria-controls="books"
+          aria-selected="false">Books</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="users-tab" data-toggle="tab" href="#users" role="tab" aria-controls="users"
+          aria-selected="false">Users</a>
+      </li>
 
-  <li class="nav-item">
-    <a class="nav-link" id="reports-tab" data-toggle="tab" href="#reports" role="tab" aria-controls="reports"
-      aria-selected="false">Reports</a>
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="sales" role="tabpanel" aria-labelledby="sales-tab"></div>
-  <div class="tab-pane fade " id="books" role="tabpanel" aria-labelledby="books-tab">F</div>
-  <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab"></div>
-  <div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="reports-tab"></div>
-</div>
-</main>
-<!--Main layout-->
+      <li class="nav-item">
+        <a class="nav-link" id="reports-tab" data-toggle="tab" href="#reports" role="tab" aria-controls="reports"
+          aria-selected="false">Reports</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="sales" role="tabpanel" aria-labelledby="sales-tab"></div>
+      <div class="tab-pane fade " id="books" role="tabpanel" aria-labelledby="books-tab">F</div>
+      <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab"></div>
+      <div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="reports-tab"></div>
+    </div>
+  </main>
+  <!--Main layout-->
 
-<!--Login modal start-->
-<div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-center" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Welcome to NGOWAN</h5>
+  <!--Login modal start-->
+  <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-center" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Welcome to NGOWAN</h5>
 
-      </div>
-      <div class="modal-body">
-      <!--  Default form login -->
-        <form class="text-center border border-light p-5" method="POST" action="" >
+        </div>
+        <div class="modal-body">
+          <!--  Default form login -->
+          <form class="text-center border border-light p-5" method="POST" action="">
 
-          <p class="h4 mb-4">login</p>
+            <p class="h4 mb-4">login</p>
 
-          <!-- Email -->
-          <div class="form-group">
-            <input type="text" id="name" class="form-control mb-4" placeholder="Name" required />
-          </div>
-          <div class="form-group">
-            <input type="text" id="idNO" class="form-control mb-4" placeholder="ID Number" required />
-          </div>
+            <!-- Email -->
 
-          <div class="form-group">
-            <input type="password" id="password" class="form-control mb-4" placeholder="Password" required />
-          </div>
+            <div class="form-group">
+              <input type="text" id="idNO" class="form-control mb-4" placeholder="ID Number" required />
+            </div>
 
-          <!-- <div class="form-group">
+            <div class="form-group">
+              <input type="password" id="password" class="form-control mb-4" placeholder="Password" required />
+            </div>
+
+            <!-- <div class="form-group">
 
               <button class="btn btn-info btn-secondary btn-fluid">Login</button>
           </div> -->
 
-      </form>
+          </form>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" onclick="login()" class="btn btn-secondary" >Login</button>
-        <!-- <button type="button" class="btn btn-primary" onclick="AddCategory()">Save changes</button> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="login()" class="btn btn-secondary">Login</button>
+          <!-- <button type="button" class="btn btn-primary" onclick="AddCategory()">Save changes</button> -->
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- End of login modal -->
-<footer>
+  <!-- End of login modal -->
+  <footer>
 
-</footer>
-<!--Footer-->
-<!-- Start your project here-->
+  </footer>
+  <!--Footer-->
+  <!-- Start your project here-->
 
-<!-- /Start your project here-->
+  <!-- /Start your project here-->
 
   <!-- SCRIPTS -->
- <!-- JQuery -->
- <!-- <script src="./src/"></script> -->
- <script>window.$ = window.jQuery = require('/home/vee/Desktop/project/electron-quick-start/mdbootstrap-jquery-pro/js/jquery-3.3.1.min.js');</script>
-<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <!-- JQuery -->
+  <!-- <script src="./src/"></script> -->
+  <script>window.$ = window.jQuery = require('./mdbootstrap-jquery-pro/js/jquery-3.3.1.min.js');</script>
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
-<script src="/home/vee/Desktop/project/electron-quick-start/src/selectize.js"></script>
-</script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
 
-<script type="text/javascript">
-  $("#sales").load('screens/sales/sales.html')
-  $("#books").load('screens/books/books.html');
-  $("#users").load('screens/users/users.html');
-  $("#reports").load('screens/reports/reports.html');
+  </script>
 
-  // open login  modal
-  $(document).ready(function(){
-    $('select').selectize();
-    $("#loginmodal").modal({
-      show:true,
-      backdrop: 'static',
-    	keyboard: false
+  <script type="text/javascript">
+    $("#sales").load('screens/sales/sales.html')
+    $("#books").load('screens/books/books.html');
+    $("#users").load('screens/users/users.html');
+    $("#reports").load('screens/reports/reports.html');
+
+    // open login  modal
+    $(document).ready(function () {
+      $("a[href='#']").click(function (e) {
+        e.preventDefault()
+      })
+      var user = sessionStorage.getItem('user');
+      // if the user information is not available, show login modal
+      if (!user) {
+        $("#loginmodal").modal({
+          show: true,
+          backdrop: 'static',
+          keyboard: false
+        });
+      }
+
+
     });
-});
 
 
-</script>
-<script src="ngowan.js"></script>
+  </script>
+  <script src="ngowan.js"></script>
 
 </body>
 
