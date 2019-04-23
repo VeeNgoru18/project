@@ -1,4 +1,3 @@
-// todo - escape quotes
 const Swal = require('sweetalert2');
 var mysql = require('mysql');
 var md5 = require('md5');
@@ -89,13 +88,14 @@ function login() {
   var idNO = $('#loginmodal #idNO').val();
   var password = $('#loginmodal #password').val();
 
-  var query = `select * from users where idNO = '${idNO}' and password = '${md5(password)}' and active= '1'`
-  console.log(query)
+  var query = `select * from users where idNO = '${idNO}' and password = '${md5(password)}' and active= '1'`;
+  console.log(query);
   connection.query(query, function (error, results, fields) {
     if (error) throw error;
     if (results.length > 0) {
 
       sessionStorage.setItem('user', JSON.stringify(results[0]))
+
       $('#loginmodal').modal('hide');
     }
     else {
@@ -106,26 +106,44 @@ function login() {
         confirmButtonText: 'OK'
       })
     }
+
+
   })
 
 }
 // add new user
 function registerUser() {
-  var idNO = $('#idNO').val();
-  var password = $('#password').val();
+  var idNO = $('#NewUserModal #idNO').val();
+  var password = $('#NewUserModal #password').val();
+  var name = $('#NewUserModal #name').val();
+  var userType = $('#NewUserModal #userType').val();
 
-  var insertRegisterQuery = `insert into users values (NULL, '${userType}', '${md5(password)}', ${active}) `;
+
+  if (!idNO.length || !password.length || !name.length || !userType){
+    Swal.fire({
+      title: 'Error!',
+      text: 'You must fill all the User details',
+      type: 'error',
+      confirmButtonText: 'OK'
+    })
+  }
+  else {
+    var insertRegisterUserQuery = `insert into users values (NULL, '${name}', '${idNO}', '${md5(password)}', '${userType}')`;
+    console.log(insertRegisterUserQuery);
+    connection.query(insertRegisterUserQuery, function(error, results, fields){
+      if (error) throw error;
+      Swal.fire({
+        title: 'success',
+        text: 'User was added successfully!',
+        type: 'success',
+        confirmButtonText: 'OK'
+      })
+      $("NewUserModal input").val('')
+      fetchUsers()
+    });
+  }
+
 }
-//sales screen
-//function Addsales(){
-//var sales;
-//var customerName = $('#customerName').val();
-//var salesDate = $('#salesDate').val();
-//var customerContact = $('#customerContact').val();
-
-//var query = `insert into sales values (NULL, '${sales}'`
-
-//}
 
 function fetchBooks() {
   var fetchBooksQuery = "select books.*, category.categoryName from books inner join category on category.categoryID = books.categoryID";
@@ -184,7 +202,7 @@ function AddBook() {
 
 
 
-  if (!bookName.length || !category.length || !quantity || !price || !publisher.length) {
+  if (!bookName.length || !category.length || !quantity.length || !price.length || !publisher.length) {
     Swal.fire({
       title: 'Error!',
       text: 'You must fill all the book details',
@@ -285,14 +303,16 @@ function addBookToSales(result) {
   $("#searchBookSalesResults").html('')
   // Here we get the user details from sessionStorage so that we use it in the sales db
   var userDetails = sessionStorage.getItem('user');
-  var userID = JSON.parse(user).userID;
+  var userID = JSON.parse(userDetails).userID;
   // here, make an insert query to sales table
-
-  for (result of results) {
+  var insertQuery = `insert into sales values (NULL, ${result.bookID}, ${result.amount}, ${quantity},)`
+  for (book of booksOnSale) {
     // for each loop, create a query for inserting a sales item
+var insertBookToSales = `insert into salesitem values (NULL, ${result.bookID}, ${result.quantity})`;
     // eg `insert into salesitem values (NULL, ${result.bookID}, ${result.qtty})
   }
 
-  // after you have added, close the modal
 
+  // after you have added, close the modal
+  $("#AddBookToSalesModal").val()
 }
